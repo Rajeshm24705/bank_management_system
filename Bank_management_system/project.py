@@ -4,10 +4,12 @@ class bank():
       self.balance=0
       self.account_created=False
    def create_account(self):
-      print("welcome to our bank")
-      name=input("enter the name")
-      age=int(input("enter your age"))
-      ph=int(input("enter the phone number"))
+      print("*********************************************")
+      print("\t\twelcome to our bank")
+      print("*********************************************")
+      name=input("enter the name:")
+      age=int(input("enter your age:"))
+      ph=int(input("enter the phone number:"))
       import random
       acc_number=""
       for i in range(10):
@@ -25,6 +27,7 @@ class bank():
       print("account created succesfully")
       print("---------------------------------------------")
    def deposite(self):
+      print("***********************************************")
       password=int(input("enter the password"))
       if(password==self.__password):
          amount=int(input("enter the amount to deposite"))
@@ -33,11 +36,12 @@ class bank():
          print("current balance is",self.balance)
       else:
          print("invalid password")
+      print("*************************************************")
 
    def withdraw(self):
-       
+       print("#################################################")
        password=int(input("enter the password"))
-       if(password==password):
+       if(password==self.__password):
         amount=int(input("enter the amount to withdraw"))
         if(amount<=self.balance):
             self.balance -=amount
@@ -47,15 +51,20 @@ class bank():
            print("insufficiant balance")
        else:
          print("invalid password")
+       print("#################################################")
    def check_balance(self):
+    print("*****************************************************")
     password=int(input("enter the password"))
     if(password==self.__password):
          print("current balance is",self.balance)
     else:
          print("invalid password")
+    print("*****************************************************")
    def password_change(self):
-      __password=int(input("enter the new password"))
-      print("password changed successfully")
+    print("------------------------------------------------------")
+    self.__password=int(input("enter the new password"))
+    print("password changed successfully")
+    print("------------------------------------------------------")
    def menu(self):
        
        while True:
